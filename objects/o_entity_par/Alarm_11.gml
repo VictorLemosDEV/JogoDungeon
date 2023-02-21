@@ -1,0 +1,2 @@
+canGenerateDust = false
+dustCooldown = false

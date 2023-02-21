@@ -1,0 +1,1 @@
+DamageCooldown = false
