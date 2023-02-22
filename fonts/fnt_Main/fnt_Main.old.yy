@@ -1,7 +1,7 @@
 {
   "resourceType": "GMFont",
   "resourceVersion": "1.0",
-  "name": "mainFont",
+  "name": "fnt_Main",
   "AntiAlias": 1,
   "applyKerning": 0,
   "ascender": 14,
@@ -190,8 +190,8 @@
   "last": 0,
   "maintainGms1Font": false,
   "parent": {
-    "name": "MenuScreen",
-    "path": "folders/Cenas/MenuScreen.yy",
+    "name": "Fontes",
+    "path": "folders/Fontes.yy",
   },
   "pointRounding": 0,
   "ranges": [
