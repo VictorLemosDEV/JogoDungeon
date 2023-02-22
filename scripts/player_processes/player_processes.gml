@@ -4,18 +4,18 @@ function reset_variables() {
 	right = 0;
 	up = 0;
 	down = 0;
-	run = 0;
+	shift = 0;
 	
 	
 }
 
 function get_input(){
 	
-	if keyboard_check(ord("W")) up     =   1  * !global.pause;
-	if keyboard_check(ord("A")) left   =   1  * !global.pause;
-	if keyboard_check(ord("S")) down   =   1  * !global.pause;
-	if keyboard_check(ord("D")) right  =   1  * !global.pause;
-	if keyboard_check(global.key_shift) {run   =   1 * !global.pause;}
+	if keyboard_check(ord("W")) up   =   1;
+	if keyboard_check(ord("A")) left   =   1;
+	if keyboard_check(ord("S")) down   =   1;
+	if keyboard_check(ord("D")) right   =   1;
+	if keyboard_check(vk_shift) {shift   =   1;}
 	if mouse_check_button(mb_left) {
 		holdLeftCounter++
 		
@@ -87,12 +87,12 @@ if holdLeftCounter >= 0.5 * room_speed {
 	_hSpeed = _hSpeed / 2
 	_vSpeed = _vSpeed / 2
 	
-	run = 0;
+	shift = 0;
 	
 }
 
 
-if run {
+if shift {
 	
 	_hSpeed *= 1.5
 	_vSpeed *= 1.5
@@ -100,7 +100,7 @@ if run {
 	
 }
 
-if !run or dustCooldown == true {
+if !shift or dustCooldown == true {
 	
 	canGenerateDust = false
 	
@@ -161,8 +161,6 @@ y += _vSpeed
 }
 	
 function anim(){
-	
-	if (global.pause) {exit}
 	
 	if (hSpeed != 0 or vSpeed != 0)
 	{

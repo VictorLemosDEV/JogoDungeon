@@ -6,6 +6,7 @@ SCALE = 4
 
 }
 
+window_set_fullscreen(true)
 
 
 
@@ -32,9 +33,6 @@ window_set_size(display_get_width(), display_get_height())
 
 defaultCamera = camera_create_view(0,0, CAMERA_RES.WIDTH, CAMERA_RES.HEIGHT, 0, o_player, -1, -1, CAMERA_RES.WIDTH/2, CAMERA_RES.HEIGHT/2)
 var _camera = defaultCamera
-
-global.view_width = camera_get_view_width(view_camera[0])
-global.view_height = camera_get_view_height(view_camera[0])
 
 
 view_enabled = true;
