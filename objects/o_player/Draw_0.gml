@@ -7,3 +7,4 @@ if holdLeftCounter >= maxHoldDuration * room_speed {
 	
 }
 
+draw_text(x,y,font_exists(mainFont))

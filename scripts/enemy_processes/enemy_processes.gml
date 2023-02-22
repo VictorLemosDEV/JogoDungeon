@@ -2,8 +2,8 @@
 function calc_entity_movement(){
 	//@desc moves enemy and apply drag
 	
-	x += hsp
-	y += vsp
+	x += hsp * !global.pause
+	y += vsp * !global.pause
 	
 	create_dust()
 	
@@ -19,8 +19,8 @@ function calc_entity_movement(){
 function calc_knockback_movement(){
 	
 	
-	x+= hsp
-	y+= vsp
+	x+= hsp * !global.pause
+	y+= vsp * !global.pause
 	
 	hsp *= 0.91
 	vsp *= 0.91
@@ -65,7 +65,7 @@ if (calc_path_timer-- <= 0){
 	
 	if x == xp and y == yp var _type = 0 else var _type = 1;;
 	
-var _found_player = mp_grid_path(global.mp_grid, path,x,y, o_player.x,o_player.y, _type)
+var _found_player = mp_grid_path(global.mp_grid, path,x,y, o_player.x,o_player.y, _type) * !global.pause
 
 if _found_player {
 	
@@ -91,6 +91,8 @@ if _found_player {
 
 
 function enemy_anim(){
+	
+	if (global.pause) {exit;}
 	
 	switch (state) {
 	
